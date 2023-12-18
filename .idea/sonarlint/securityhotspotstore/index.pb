@@ -11,3 +11,12 @@ I
 DockerServer/build.gradle,3/0/3009f2d39bceb7067e4c7a62728131d89ea5bced
 f
 6DockerServer/src/main/java/dockerserver/user/User.java,c/3/c3f084b91c082e433afec77ef7156a49467bd513
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+G
+DockerServer/.gitignore,d/3/d3c896e0fa8792c804476f242c2f9a85badc6454
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
+S
+#.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
