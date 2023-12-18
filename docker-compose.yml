@@ -1,0 +1,31 @@
+version: '3'
+services:
+  db:
+    build:
+      context: ./docker-test-db
+      dockerfile: Dockerfile
+    ports:
+      - 3306:3306
+    volumes:
+      - ./docker-test-db/store:/var/lib/mysql
+    networks:
+      - network
+  server:
+    build:
+      context: ./DockerServer
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    restart: always
+    depends_on:
+      - db        # 위에 'db'라고 명시되어있는 service가 build되면 실행되게 설정
+    environment:
+      SPRING_DATASOUCE_URL: jdbc:mysql://db:3306/testdb?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOUCE_DRIVER: com.mysql.cj.jdbc.Driver
+      SPRING_DATASOUCE_USERNAME: root
+      SPRING_DATASOUCE_PASSWORD: 1234
+    networks:
+      - network
+
+networks:
+  network:
